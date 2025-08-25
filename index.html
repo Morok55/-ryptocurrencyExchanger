@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta charset="utf-8">
+    <meta name="description" content="SwapKitty">
+    <!-- <meta name="keywords" content="обменник,swap,swapkitty,html"> -->
+    <title>SwapKitty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/swapKitty.css">
+    <!-- <link href="css/adaptive_pizza.css" rel="stylesheet" type="text/css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link href="https://fonts.cdnfonts.com/css/quantico" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+</head>
+<body ontouchstart>
+    <div id="index-main">
+        <div id="header">
+            <div class="logo-name-container">
+                <img src="images/logo_clipped.png" alt="" class="logo">
+                <div class="name"><b class="color-red">S</b>wap <span class="color-red">K</span>itty</div>
+            </div>
+        </div>
+
+        <div class="text-title-container">
+            <div class="text-title-1">Crypto Exchange</div>
+            <div class="text-title-2">quick & easy, just swap</div>
+        </div>
+
+        <div class="swap-container">
+            <div class="i-swap-container">
+                <div class="i-swap-text">You send</div>
+                <br style="float: left;">
+                <form id="main-form"><input type="text" class="i-swap-input" placeholder="0" name="num"></form>
+                <div class="i-crypto-select">
+                    <select class="form-select select-send" aria-label="Пример выбора по умолчанию" onchange="checkForm()">
+                        <option value="TON" selected>TON</option>
+                        <option value="USDT">USDT</option>
+                        <option value="SOL">SOL</option>
+                        <option value="ETH">ETH</option>
+                        <option value="TRX">TRX</option>
+                        <option value="BNB">BNB</option>
+                        <option value="BTC">BTC</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="i-swap-container" style="margin-top: 8%;">
+                <div class="i-swap-text">You get</div>
+                <br style="float: left;">
+                <div class="i-swap-input" id="you-get-swap-num">0</div>
+                <div class="i-crypto-select">
+                    <select class="form-select select-get" aria-label="Пример выбора по умолчанию" onchange="checkForm()">
+                        <option value="TON">TON</option>
+                        <option value="USDT" selected>USDT</option>
+                        <option value="SOL">SOL</option>
+                        <option value="ETH">ETH</option>
+                        <option value="TRX">TRX</option>
+                        <option value="BNB">BNB</option>
+                        <option value="BTC">BTC</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="button-swap" id="btn-exchange">Exchange</button>
+        </div>
+    </div>
+
+    <div class="info-title">
+        <div class="info-title-text">Telegram's Premier<br>Cross Chain Exchange</div>
+    </div>
+    
+    <div class="info-container">
+        <div class="card mb-3 card-info" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="images/info_privacy.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Privacy</h5>
+                        <p class="card-text card-text-middle">Sign-up is not required</p>
+                        <p class="card-text"><small class="text-body-secondary">SwapKitty provides cryptocurrency exchange without User registration.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3 card-info" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="images/info_wide_choice.png" class="img-fluid rounded-start" alt="..." style="rotate: -45deg;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Wide choice</h5>
+                        <p class="card-text card-text-middle">750+ cryptocurrencies.</p>
+                        <p class="card-text"><small class="text-body-secondary">Enjoy exchanging an incredible variety of Cryptocurrencies.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3 card-info" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="images/info_safety.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Safety</h5>
+                        <p class="card-text card-text-middle">Non-custodial</p>
+                        <p class="card-text"><small class="text-body-secondary">Crypto is sent directly to your wallet, we do not store it on our service.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3 card-info" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="images/info_support.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">24/7 support</h5>
+                        <p class="card-text card-text-middle">We are always here</p>
+                        <p class="card-text"><small class="text-body-secondary">Our Support team is easily reached, We are here to answer your questions.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <h1 style="color: black;">Курс Toncoin: <span id="ton-price"></span> USD</h1> -->
+    </div>
+
+    <div class="inactive-menu">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status"></div>
+        </div>
+    </div>
+
+    <style>
+        /* Ваши стили для Select2 */
+        .select2-container--default .select2-selection--single {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            background-color: rgb(216, 216, 216);
+            border: 1px solid #ccc;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 100%;
+            padding: 5px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 100%; /* Высота стрелки */
+            top: 50%; /* Центрируем по вертикали */
+            transform: translateY(-50%); /* Центрируем по вертикали */
+            right: 10px; /* Отступ от края */
+        }
+    </style>
+    
+    <script>
+        if (window.Telegram && window?.Telegram?.WebApp) {
+            var app = window.Telegram.WebApp;
+            app.ready();
+            app.expand();
+            app.isVerticalSwipesEnabled = false;
+            app.disableVerticalSwipes();
+        }
+
+        // window.addEventListener('load', function () { // Загрузка
+        //     const loader = document.querySelector('.loader');
+        //     loader.classList.add('hidden');
+        // });
+    </script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
