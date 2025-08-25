@@ -37,10 +37,7 @@
 1. Залей проект в репозиторий GitHub.
 2. В настройках репозитория (**Settings → Pages**) включи GitHub Pages.
 3. Укажи ветку `main` и папку `/ (root)`.
-4. Сайт будет доступен по адресу:
-   ```
-   https://Morok55.github.io/CryptocurrencyExchanger/
-   ```
+4. Сайт будет доступен по адресу: https://coruscating-dragon-38d09e.netlify.app/
 
 ---
 
@@ -50,6 +47,12 @@
 - JavaScript (Fetch API, jQuery, Select2)
 - CoinGecko API
 - Telegram WebApp API
+
+---
+
+## 🌐 Доступ
+Приложение доступно в Telegram по адресу:  
+👉 [SwapKitty](https://t.me/SwapKitty_bot)
 
 ---
 
