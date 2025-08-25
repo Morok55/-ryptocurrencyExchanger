@@ -39,7 +39,7 @@
 3. Укажи ветку `main` и папку `/ (root)`.
 4. Сайт будет доступен по адресу:
    ```
-   https://<твой-логин>.github.io/<имя-репозитория>/
+   https://Morok55.github.io/CryptocurrencyExchanger/
    ```
 
 ---
